@@ -1,0 +1,12 @@
+class Solution {
+public:
+    bool checkIfExist(vector<int>& arr) {
+        unordered_set<int> seen_numbers;
+        for(int ele: arr){
+            if(seen_numbers.count(2*ele) or (ele%2==0 and seen_numbers.count(ele/2)))
+                return true;
+            seen_numbers.insert(ele);
+        }
+        return false;
+    }
+};
